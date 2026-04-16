@@ -1,12 +1,12 @@
+
+
 FROM alpine:latest
-
 RUN apk add --no-cache nginx
-
 RUN mkdir -p /usr/share/nginx/html
 
 RUN echo "<h1>Application Deployed via Terraform IaC!</h1>" > /usr/share/nginx/html/index.html
 
-# 🔥 IMPORTANT: replace broken default config
+# replace broken default config
 RUN printf "server {\n\
     listen 80 default_server;\n\
     listen [::]:80 default_server;\n\
@@ -22,3 +22,16 @@ RUN printf "server {\n\
 EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
+
+
+
+
+
+
+
+
+
+
+
+
+
