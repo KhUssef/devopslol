@@ -8,6 +8,7 @@ terraform {
 }
 
 provider "docker" {}
+
 resource "docker_image" "postgres_image" {
   name         = "postgres:latest"
   keep_locally = true
@@ -21,6 +22,7 @@ resource "docker_container" "db_container" {
     internal = 5432
     external = 5432
   }
+  
 
   env = [
     "POSTGRES_USER=${var.db_user}",

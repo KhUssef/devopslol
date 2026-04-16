@@ -8,10 +8,6 @@ variable "db_user" {
   default = "devops_user"
 }
 
-variable "db_password" {
-  type    = string
-  default = "newpassword456"
-}
 
 variable "app_port_external" {
   type    = number
